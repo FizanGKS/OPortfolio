@@ -26,7 +26,7 @@ ul li
     position: relative;
     list-style: none;
 }
-ul li a 
+ul li a
 {
     position: relative;
     font-size: 5em;
@@ -37,6 +37,7 @@ ul li a
     color: transparent;
     -webkit-text-stroke: 1px rgba(255,255,255,0.5);
 }
+
 
 ul li a::before
 {
@@ -53,7 +54,9 @@ ul li a:hover::before
     width: 100%;
     filter: drop-shadow(0 0 25px var(--clr));
 }
-.HomeButton {
+/* CSS for project page starts here */
+
+a.home_button {
 	box-shadow: 0px 4px 10px 1px #3dc21b;
 	background-color:#44c767;
 	border-radius:25px;
@@ -71,10 +74,165 @@ ul li a:hover::before
     right: 0;
     margin: 15px;
 }
-.HomeButton:hover {
+a.home_button:hover {
 	background-color:#5cbf2a;
 }
-.HomeButton:active {
+a.home_button:active {
 	position:relative;
 	top:1px;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#f00, #f0f);
+    clip-path: circle(30% at right 70%);
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#2196f3, #e91e63);
+    clip-path: circle(20% at 10% 10%);
+}
+.container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+.container .card {
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+}
+.container .card .content {
+    padding: 20px;
+    text-align: center;
+    transition: 0.5s;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+}
+.container .card:hover .content {
+    transform: translateY(0px);
+    opacity: 1;
+}
+.image {
+    height: 250px;
+    width: 250px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+.container .card .content h2 {
+    position: absolute;
+    top: -30px;
+    right: 30px;
+    font-size: 7em;
+    color: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+}
+.container .card .content h3 {
+    font-size: 1.7em;
+    color: #fff;
+    z-index: 1;
+}
+.container .card .content p {
+    font-size: 1em;
+    color: #fff;
+    font-weight: 270;
+}
+.container .card .content a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Contact page starts here */
+/* Style the label to display next to the inputs */
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  input[type=text], select, textarea {
+    display: flex;
+    position: relative;
+    font-family: 'Caveat', cursive;
+    width: 200%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+  /* Style the submit button with a specific background color etc */
+input[type=submit] {
+    box-shadow: 0px 4px 10px 1px #3dc21b;
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;  
+  }
+  /* Floating column for labels: 25% width */
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+  
+/* Floating column for inputs: 75% width */
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+  
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
 }
